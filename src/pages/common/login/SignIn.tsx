@@ -172,7 +172,7 @@ const LoginPage = () => {
                 style={{
                   position: "absolute",
                   right: "12px",
-                  top: "38px",
+                  top: "28px",
                   cursor: "pointer",
                 }}
               >
