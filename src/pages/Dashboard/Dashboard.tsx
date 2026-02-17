@@ -2,6 +2,12 @@
 const Dashboard = () => {
   return (
     <div>
+<div className="layout-wrapper layout-content-navbar">
+  <div className="layout-container">
+    
+  </div>
+</div>
+    
       <section>
   <div className="container py-5">
 

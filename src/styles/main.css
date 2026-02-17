@@ -80,3 +80,9 @@ a{
 	border: none;
 	padding: 10px 0;
 }
+.layout-wrapper, .layout-container {
+	width: 100%;
+	display: flex;
+	flex: 1 1 auto;
+	align-items: stretch;
+}
