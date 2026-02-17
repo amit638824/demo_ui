@@ -254,6 +254,7 @@ aside.layout-menu {
 .shadow-none {
 	box-shadow: none !important;
 	background: transparent;
+	color: #fff !important;
 }
 .nav-link {
 	display: block;
@@ -298,4 +299,29 @@ aside.layout-menu {
 .container, .container-fluid, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl {
 	padding-right: 1.625rem;
 	padding-left: 1.625rem;
+}
+.card-header {
+	padding: 15px;
+	font-size: 16px;
+	color: #fff;
+}
+.card {
+	background: #1a1a1a;
+	color: #AAAAAA;
+}
+#textAreaExample2 {
+	font-size: 14px !important;
+	background-color: #0f0f0f !important;
+	border-color: #0f0f0f !important;
+	color: #fff !important;
+}
+#navbar-collapse .form-control:focus {
+	box-shadow: none !important;
+	background-color: transparent;
+}
+.btn.btn-info.btn-rounded.float-end {
+	background: linear-gradient(135deg, #0d6efd 0%, #FD1F8E 100%);
+	border: none;
+	color: #fff;
+	padding: 14px 48px;
 }
