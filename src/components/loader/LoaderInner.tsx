@@ -1,4 +1,4 @@
-import React from 'react'
+ 
 import "./loaderInner.css"
 const LoaderInner = () => {
   return (
