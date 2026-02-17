@@ -5,6 +5,7 @@ import { clearUserDetails } from "../../redux/slice/userDetailSlice";
 import { logout } from "../../redux/slice/authSlice";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { IoMdLogOut } from "react-icons/io";
 
 const Dashboard: any = () => {
   const [open, setOpen] = useState(false);
@@ -103,45 +104,13 @@ const Dashboard: any = () => {
                     className={`dropdown-menu dropdown-menu-end ${open ? "show" : ""
                       }`}
                   >
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        <div className="d-flex">
-                          <div className="flex-shrink-0 me-3">
+                    
 
-                          </div>
-                          <div className="flex-grow-1">
-                            <span className="fw-semibold d-block">
-                              John Doe
-                            </span>
-                            <small className="text-muted">Admin</small>
-                          </div>
-                        </div>
-                      </a>
-                    </li>
-
-                    <li>
-                      <div className="dropdown-divider"></div>
-                    </li>
-
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        My Profile
-                      </a>
-                    </li>
-
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        Settings
-                      </a>
-                    </li>
-
-                    <li>
-                      <div className="dropdown-divider"></div>
-                    </li>
+                    
 
                     <li onClick={handleLogout}>
                       <a className="dropdown-item" href="#">
-                        Log Out
+                        <IoMdLogOut /> Log Out
                       </a>
                     </li>
                   </ul>

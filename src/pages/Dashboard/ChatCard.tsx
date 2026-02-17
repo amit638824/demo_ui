@@ -1,106 +1,133 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { VscSend } from "react-icons/vsc";
+import { BsFillSendFill } from "react-icons/bs";
 import { chatService } from "../../services/AuthServices";
 import "./chat.css";
 
 type ChatMsg = {
-    role: "user" | "bot";
-    text: string;
+  role: "user" | "bot";
+  text: string;
 };
 
 const ChatCard = () => {
-    const [message, setMessage] = useState("");
-    const [chatList, setChatList] = useState<ChatMsg[]>([]);
-    const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState("");
+  const [chatList, setChatList] = useState<ChatMsg[]>([]);
+  const [loading, setLoading] = useState(false);
 
-    const handleSendMessage = async () => {
-        console.log("okkkk");
+  const textareaRef = useRef<HTMLTextAreaElement | null>(null);
+  const chatBodyRef = useRef<HTMLDivElement | null>(null);
 
-        if (!message.trim() || loading) return;
-        console.log("niche...");
-        setChatList((prev) => [...prev, { role: "user", text: message }]);
-        setMessage("");
+  // 🔥 Auto grow textarea
+  const handleTextareaChange = (
+    e: React.ChangeEvent<HTMLTextAreaElement>
+  ) => {
+    setMessage(e.target.value);
 
-        try {
-            setLoading(true);
-            const res = await chatService({ message });
+    const textarea = textareaRef.current;
+    if (textarea) {
+      textarea.style.height = "auto";
+      textarea.style.height = textarea.scrollHeight + "px";
+    }
+  };
 
-            setChatList((prev) => [
-                ...prev,
-                { role: "bot", text: res?.data?.botReply || "No response" },
-            ]);
-        } catch (err) {
-            console.error(err);
-        } finally {
-            setLoading(false);
-        }
-    };
+  // 🔥 Auto scroll to bottom
+  useEffect(() => {
+    if (chatBodyRef.current) {
+      chatBodyRef.current.scrollTop =
+        chatBodyRef.current.scrollHeight;
+    }
+  }, [chatList, loading]);
 
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        handleSendMessage();
-    };
+  const handleSendMessage = async () => {
+    if (!message.trim() || loading) return;
 
-    return (
-        <div className="card">
-            <h5 className="card-header">Chat with AI</h5>
+    const userMessage = message;
 
-            {/* Chat Body */}
-            <div className="card-body chat-body">
-                {chatList.map((msg, index) => (
-                    <div
-                        key={index}
-                        className={`chat-row ${msg.role === "user" ? "user" : "bot"}`}
-                    >
-                        <div
-                            key={index}
-                            className={`chat-row ${msg.role === "user" ? "user" : "bot"}`}
-                        >
-                            <div className="chat-bubble">
-                                {msg.role === "bot" ? (
-                                    <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                                        {msg.text}
-                                    </ReactMarkdown>
-                                ) : (
-                                    msg.text
-                                )}
-                            </div>
-                        </div>
+    setChatList((prev) => [...prev, { role: "user", text: userMessage }]);
+    setMessage("");
 
-                    </div>
-                ))}
+    // reset textarea height
+    if (textareaRef.current) {
+      textareaRef.current.style.height = "40px";
+    }
 
-                {loading && <p className="text-muted">AI is typing...</p>}
+    try {
+      setLoading(true);
+      const res = await chatService({ message: userMessage });
+
+      setChatList((prev) => [
+        ...prev,
+        { role: "bot", text: res?.data?.botReply || "No response" },
+      ]);
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    handleSendMessage();
+  };
+
+  return (
+    <div className="card chat-card">
+      <h5 className="card-header">Chat with AI</h5>
+
+      <div className="chat-container">
+        {/* Chat Messages */}
+        <div className="chat-body" ref={chatBodyRef}>
+          {chatList.map((msg, index) => (
+            <div
+              key={index}
+              className={`chat-row ${
+                msg.role === "user" ? "user" : "bot"
+              }`}
+            >
+              <div className="chat-bubble">
+                {msg.role === "bot" ? (
+                  <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                    {msg.text}
+                  </ReactMarkdown>
+                ) : (
+                  msg.text
+                )}
+              </div>
             </div>
+          ))}
 
-            {/* Input */}
-            <form className="card-footer" onSubmit={handleSubmit}>
-                <textarea
-                    className="form-control"
-                    rows={2}
-                    placeholder="Ask something..."
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                    onKeyDown={(e) => {
-                        if (e.key === "Enter" && !e.shiftKey) {
-                            e.preventDefault();
-                            handleSendMessage();
-                        }
-                    }}
-                />
-
-                <button
-                    type="submit"
-                    className="btn btn-info float-end mt-2"
-                    disabled={loading || !message.trim()}
-                >
-                    <VscSend className="text-light" />
-                </button>
-            </form>
+          {loading && <p className="typing">AI is typing...</p>}
         </div>
-    );
+
+        {/* Input */}
+        <form className="chat-footer" onSubmit={handleSubmit}>
+          <textarea
+            ref={textareaRef}
+            className="form-control"
+            placeholder="Ask something..."
+            value={message}
+            onChange={handleTextareaChange}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" && !e.shiftKey) {
+                e.preventDefault();
+                handleSendMessage();
+              }
+            }}
+          />
+
+          <button
+            type="submit"
+            className="sendbutton"
+            disabled={loading || !message.trim()}
+          >
+            <BsFillSendFill />
+          </button>
+        </form>
+      </div>
+    </div>
+  );
 };
 
 export default ChatCard;
