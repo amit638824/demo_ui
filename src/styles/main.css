@@ -428,13 +428,13 @@ aside.layout-menu {
 	position: relative;
 }
 .chat-footer textarea {
-	resize: none;
-	overflow: hidden;
-	min-height: 40px;
-	max-height: 150px;
-	border-radius: 20px;
-	padding: 10px 15px;
-	border-radius: 35px;
+    resize: none;
+    overflow: hidden;
+    min-height: 64px;
+    max-height: 150px;
+    border-radius: 20px;
+    padding: 10px 15px;
+    border-radius: 35px;
 }
 .sendbutton {
   border: none;
