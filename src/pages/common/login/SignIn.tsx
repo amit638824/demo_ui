@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Loader from "../../../components/loader/Loader";
 import { login } from "../../../redux/slice/authSlice";
@@ -65,48 +65,57 @@ const LoginPage = () => {
     <div className="d-flex justify-content-center align-items-center vh-100 bg-themebg">
       {loading && <Loader />}
 
-      <div className="card p-4 shadow-lg loginBox">
-        <div className="text-center mb-3">
-          <img src="/assets/images/logo.png" width={150} alt="Logo" />
-        </div>
+      <div className="card shadow-lg loginBox">
+        <div className="card-body p-0 auth-header-box">
+                                    <div className="text-center p-3">
+                                        <a href="index.html" className="logo logo-admin">
+                                            <img src="assets/images/logo.png" height="60" alt="logo" className="auth-logo" />
+                                        </a>
+                                        <h4 className="mt-3 mb-1 fw-semibold text-white font-18">Let's Get Started</h4>   
+                                        <p className="text-muted  mb-0">Sign in to continue to AI Sync.</p>  
+                                    </div>
+                                </div>
+        
 
-        <h3 className="text-center mb-3">Login</h3>
-
-        <form onSubmit={handleSubmit(onSubmit)}>
-          {/* EMAIL */}
-          <div className="mb-3">
-            <input
-              type="email"
-              className="form-control"
-              placeholder="Enter email"
-              {...register("email")}
-            />
-            {errors.email && (
-              <div className="text-danger mt-1">
-                {errors.email.message}
-              </div>
-            )}
-          </div>
-
-          {/* PASSWORD */}
-          <div className="mb-3">
-            <input
-              type="password"
-              className="form-control"
-              placeholder="Enter password"
-              {...register("password")}
-            />
-            {errors.password && (
-              <div className="text-danger mt-1">
-                {errors.password.message}
-              </div>
-            )}
-          </div>
-
-          <button type="submit" className="btn btn-primary w-100">
-            Login
-          </button>
-        </form>
+        <div className="card-body pt-0">                                    
+                                    <form className="my-4" action="#">            
+                                        <div className="form-group mb-2">
+                                            <label className="form-label" for="username">Username</label>
+                                            <input type="text" className="form-control" id="username" name="username" placeholder="Enter username" />                               
+                                        </div>
+            
+                                        <div className="form-group">
+                                            <label className="form-label" for="userpassword">Password</label>                                            
+                                            <input type="password" className="form-control" name="password" id="userpassword" placeholder="Enter password" />                            
+                                        </div>
+            
+                                        <div className="form-group row mt-3">
+                                            <div className="col-sm-6">
+                                                <div className="form-check form-switch form-switch-success">
+                                                    <input className="form-check-input" type="checkbox" id="customSwitchSuccess" />
+                                                    <label className="form-check-label" for="customSwitchSuccess">Remember me</label>
+                                                </div>
+                                            </div>
+                                            <div className="col-sm-6 text-end">
+                                                <Link to="" className="text-muted font-13"><i className="dripicons-lock"></i> Forgot password?</Link>                                    
+                                            </div>
+                                        </div>
+            
+                                        <div className="form-group mb-0 row">
+                                            <div className="col-12">
+                                                <div className="d-grid mt-3 loginbtn">
+                                                    <button className="btn btn-primary" type="button">Log In</button>
+                                                </div>
+                                            </div>
+                                        </div>                           
+                                    </form>
+                                    <div className="m-3 text-center text-muted">
+                                        <p className="mb-0">Don't have an account ?  <a href="#" className="text-primary ms-2">Resister Here</a></p>
+                                    </div>
+                                    
+                                    
+                                    
+                                </div>
       </div>
     </div>
   );
