@@ -1,0 +1,45 @@
+/* Overlay confined to parent */
+.loader-component {
+	z-index: 50;
+	-webkit-backdrop-filter: blur(6px);
+	backdrop-filter: blur(6px);
+	background: #0006;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	position: fixed;
+	inset: 0;
+
+}
+
+/* Center loader */
+.loader-img {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Spinner */
+.spinner-border {
+  border: .25em solid;
+  color: #029aa7;
+  border-inline-end-color: transparent;
+  border-radius: 50%;
+  width: 140px;
+  height: 140px;
+  animation: spinner-border .75s linear infinite;
+}
+
+/* Logo inside spinner */
+.loader-img img {
+  position: absolute;
+  width: 100px;
+}
+
+/* Animation */
+@keyframes spinner-border {
+  to {
+    transform: rotate(360deg);
+  }
+}

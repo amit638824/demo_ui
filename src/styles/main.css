@@ -1,0 +1,857 @@
+body{
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+}
+.loginBox {
+	border-radius: 20px;
+	width: 100%;
+	max-width: 480px;
+	padding: 30px 40px !important;
+}
+
+.logoheader {
+	text-align: center;
+	margin: 0 0 1.5rem;
+}
+.loginBox h3 {
+	font-size: 24px;
+	font-weight: 600;
+	margin: 35px 0 0;
+}
+.themeBlue {
+	color: #03416b;
+	text-decoration: none;
+}
+.btn.btn-primary {
+	background-color: #03416b;
+	border-color: #03416b;
+	font-size: 14px;
+}
+.btn.btn-primary:hover {
+	background-color: #0f5280;
+    border-color: #0f5280;
+}
+
+.bg-themebg{
+    background: #003C60;
+    background: linear-gradient(165deg, rgba(0, 60, 96, 1) 0%, rgba(4, 154, 169, 1) 50%);
+}
+.eyeComponent {
+	position: relative;
+	width: 100%;
+	display: block;
+}
+.eyeicon {
+	position: absolute;
+	right: 10px;
+	top: 7px;
+}
+.passwordValidation {
+	position: absolute;
+	background: #fff;
+	width: 100%;
+	border: 1px solid #ccc;
+	padding: 0 15px;
+}
+.form-control:focus {
+	box-shadow: none;
+}
+.eyeicon svg {
+	font-size: 18px;
+}
+.side-nav-area {
+	background: #fff;
+	border-right: 1px solid #e2e8f0;
+}
+.sidebar-logo {
+	padding: 10px 15px;
+	border-bottom: 1px solid #e2e8f0;
+	min-height: 66px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.side-nav-area.openNavigation {
+	max-width: 260px;
+	width: 100%;
+	transition: 0.3s;
+}
+.side-nav-area.closeNavigation {
+	max-width: 100px;
+	width: 100%;
+	transition: 0.3s;
+}
+.topBar-area {
+	border-bottom: 1px solid #e2e8f0;
+	padding: 10px 15px;
+	height: 66px;
+}
+.toggleButton {
+	background: none;
+	border: none;
+	margin-left: 18px;
+}
+.toggleButton svg {
+	font-size: 22px !important;
+	color: #393B40 !important;
+	width: 22px !important;
+	height: 22px !important;
+}
+/* Job List Card Styling */
+.jobposting .formsection {
+  background: #ffffff;
+  border: 1px solid #e6ebf1;     /* light border */
+  border-radius: 8px;           /* rounded corners */
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04); /* subtle shadow */
+}
+
+/* Footer divider (line before call info) */
+.jobposting .formsection .text-muted.small {
+  border-top: 1px solid #eef1f6;
+  padding-top: 12px;
+  margin-top: 12px;
+}
+
+/* Status badge spacing */
+.jobposting .badge {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+/* Review & Contact buttons */
+.jobposting .roundbtn .btn-outline-primary {
+	border-radius: 20px;
+	font-size: 14px;
+	border-color: #CACACA;
+	color: #424242;
+}
+ .roundbtn .btn.btn-primary.selected{
+	border-color: #FFAAC9;
+	background-color: #FFEBF3;
+	color: #424242;
+	border-radius: 20px;
+ }
+ .jobposting .roundbtn .btn-outline-primary:hover {
+	background-color: #f0f0f0;
+}
+.roundbtn .btn.btn-primary.selected:hover,  .roundbtn .btn.btn-primary.selected:hover, .jobposting .btn.btn-primary.active:hover {
+	background-color: #ffe0ed !important;
+}
+.checkTime .MuiPickersInputBase-root {
+	height: 38px;
+	font-size: 14px;
+}
+/* View candidates button */
+.jobposting .btn.btn-primary.active {
+  border-radius: 20px;
+  border-color: #FFAAC9;
+  background-color: #FFEBF3;
+  color: #424242;
+}
+.linkEmail {
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navbar-custom-menu .navbar-nav {
+	-ms-flex-direction: row;
+	flex-direction: row;
+}
+.navbar-custom-menu > .navbar-nav > li {
+	position: relative;
+}
+.navbar-custom-menu .navbar-nav > li {
+	height: 66px;
+}
+.navbar-custom-menu .navbar-nav > li > a.dropdown-toggle {
+	vertical-align: middle;
+	text-align: center;
+	background-color: #fff;
+	border-radius: 5px;
+	width: 45px;
+	height: 45px;
+	margin: 8px 5px;
+	padding: 5px;
+	font-size: 25px;
+	line-height: 27px;
+	display: block;
+	box-shadow: 0 0 30px #523f690d;
+}
+.topBar-area .navbar-nav > li.dropdown > .dropdown-menu {
+	border: none;
+	width: 250px;
+	max-width: 250px;
+	margin: 0;
+	padding: 0;
+	top: 100% !important;
+	position: absolute !important;
+	inset: auto 0 auto auto !important;
+	transform: translate(0, 6px) !important;
+	box-shadow: 0 0 4px #0000004f;
+}
+.topBar-area .navbar-nav > li.dropdown > .dropdown-menu > li.header {
+	background-color: #ffffff;
+	border-bottom: 1px solid #f3f6f9;
+	color: #172b4c;
+	font-size: 14px;
+	border-radius: 4px 4px 0 0;
+	padding: 0;
+}
+.topBar-area .navbar-nav > li.dropdown > .dropdown-menu > li {
+	position: relative;
+}
+.topBar-area .navbar-nav > li.dropdown > .dropdown-menu > li.header > div {
+	box-shadow: none;
+}
+.flexbox {
+	display: -webkit-box;
+	display: flex;
+	-webkit-box-pack: justify;
+	justify-content: space-between;
+}
+.flexbox > :first-child {
+	margin-left: 0;
+}
+.flexbox > :last-child {
+  margin-right: 0;
+}
+.flexbox > * {
+  margin-left: 4px;
+  margin-right: 4px;
+}
+.notifications-menu h4 {
+	font-size: 16px;
+}
+.p-20 {
+	padding: 20px !important;
+}
+a{
+	text-decoration: none;
+}
+.notifications-menu .dropdown-menu {
+	color: #172b4c;
+	border-radius: 15px;
+	font-size: 13px;
+	border-color: #f3f6f9;
+	padding: 0;
+	-webkit-box-shadow: 0 0 4px #0000004f;
+	box-shadow: 0 0 4px #0000004f;
+	z-index: 992;
+}
+.topBar-area .navbar-nav > li.dropdown > .dropdown-menu > li .menu {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	overflow-x: hidden;
+}
+.topBar-area .navbar-nav > li.dropdown > .dropdown-menu > li .menu > li > a {
+	display: block;
+	white-space: nowrap;
+	border-bottom: 1px solid #f3f6f9;
+	color: #172b4c;
+  	overflow: hidden;
+  	text-overflow: ellipsis;
+  	padding: 10px;
+}
+.flexbox .text-danger {
+	font-size: 12px;
+}
+.topBar-area .navbar-nav > li.dropdown > .dropdown-menu > li.footer > a {
+	font-size: 14px;
+	padding: 15px 10px;
+	text-align: center;
+	border-radius: 0 0 4px 4px;
+	line-height: 20px;
+	display: block;
+	width: auto;
+	margin: 0;
+	color: #172b4c;
+}
+.topBar-area .dropdown-toggle::after{
+	display: none;
+}
+.bell-icons {
+	font-size: 20px;
+	color: #172b4c;
+	position: relative;
+}
+.userProfilepic {
+	font-size: 20px;
+	color: #172b4c;
+}
+.topBar-area .navbar-nav > li.dropdown > .dropdown-menu.flipInX {
+	width: 180px;
+}
+.dropdown-menu .user-body a {
+	font-size: 14px;
+	position: relative;
+	margin: 5px 0;
+}
+.dropdown-menu .user-body a::before {
+	content: "";
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	left: 10px;
+	background: #f7f7f7;
+	z-index: -2;
+	top: 3px;
+	border-radius: 5px;
+}
+.dropdown-menu .user-body a svg {
+	margin-right: 10px;
+}
+.dropdown-item:hover, .dropdown-item:focus {
+	background-color: #f7f7f7;
+}
+.customCrIcons img {
+	width: 14px;
+	margin-right: 10px;
+}
+.bell-icons .badge-notify {
+	color: #fff;
+	background-color: #f01414;
+	border-radius: 50%;
+	justify-content: center;
+	align-items: center;
+	width: 18px;
+	height: 18px;
+	font-size: 11px;
+	display: flex;
+	position: absolute;
+	top: -9px;
+	right: -10px;
+}
+.box {
+	position: relative;
+	margin-bottom: 1.5rem;
+	width: 100%;
+	background-color: #ffffff;
+	border-radius: 15px;
+	padding: 0px;
+	-webkit-transition: .5s;
+	transition: .5s;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-shadow: 0 0 30px 0 rgba(82, 63, 105, 0.05);
+	box-shadow: 0 0 30px 0 rgba(82, 63, 105, 0.05);
+}
+.box-header {
+	color: #172b4c;
+	display: block;
+	padding: 1.5rem;
+	position: relative;
+	border-bottom: 1px solid rgba(72, 94, 144, 0.16);
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+}
+.p-4.flex-grow-1.overflow-auto {
+	background: #FAFBFD;
+	position: relative;
+}
+.box-header.with-border {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+.box-header .box-title {
+	margin: 0;
+	font-weight: 400;
+	display: inline-block;
+	font-size: 18px;
+}
+.box-body {
+	padding: 1.5rem;
+	-ms-flex: 1 1 auto;
+	flex: 1 1 auto;
+	border-radius: 15px;
+}
+.box-footer {
+	border-top: 1px solid rgba(0, 0, 0, 0.07);
+	padding: 1.5rem;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+}
+.box-footer .btn {
+	border-radius: 5px;
+	padding: 8px 16px;
+	font-size: 14px;
+	min-width: 80px;
+}
+.box-footer .btn-warning {
+	color: #fff;
+	background-color: #ff9d11;
+	border-color: #ff9d11;	
+}
+.me-1 {
+	margin-right: 10px !important;
+}
+h4.box-title.text-info {
+	font-size: 18px;
+	color: #673ab7 !important;
+	font-weight: 400;
+	margin: 10px 0;
+}
+.form-control, .form-select {
+	border-radius: 5px;
+	box-shadow: none;
+	border-color: #86a4c3;
+	height: auto;
+	font-size: 14px;
+}
+.form-group {
+	margin-bottom: 1rem;
+}
+.smalltext {
+	display: block;
+	font-size: 13px;
+	font-weight: normal;
+}
+.company-logo-preview img {
+	width: 110px;
+}
+.customValues {
+	background: #fff;
+	border: 1px solid #CACACA;
+	padding: 7px 16px;
+	border-radius: 25px;
+	height: 38px;
+}
+.customInputBox {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+.customValues.active {
+	background: #FFEBF3;
+	border-color: #FFAAC9;
+}
+.redastrick {
+	color: red;
+	margin-left: 3px;
+}
+label.file {
+	width: 100%;
+}
+.profile-page .box-body {
+	min-height: 742px;
+}
+.form-group.aboutCompany textarea {
+	min-height: 169px;
+}
+.viewbtn {
+	background: #fff;
+	border: 1px solid #003b5f;
+	color: #003b5f;
+	padding: 5px;
+	display: inline-block;
+	margin: 10px 0 0;
+	min-width: 80px;
+	text-align: center;
+	border-radius: 25px;
+	cursor: pointer;
+}
+.card.pricing-card {
+	text-align: center;
+	border-radius: 30px;
+	margin-bottom: 20px;
+	transition: all .6s;
+	position: relative;
+}
+.pricing-card .card-body {
+	padding-top: 55px;
+	padding-bottom: 62px;
+	background: linear-gradient(151deg,#fefefe 41.58%,#f0f7ff 117.5%);
+	border-radius: 30px;
+}
+.pricing-plan-icon {
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	font-size: 40px;
+	line-height: 1;
+	margin-bottom: 24px;
+}
+.pricing-plan-title {
+	color: #000;
+	margin-bottom: 11px;
+	font-size: 16px;
+	font-weight: normal;
+}
+.pricing-plan-cost {
+	color: #000;
+	margin-bottom: 29px;
+	font-size: 26px;
+	font-weight: 500;
+}
+.pricing-plan-features {
+	color: #000;
+	font-size: 40px;
+	line-height: 2.14;
+	list-style: none;
+	font-weight: bold;
+}
+.pricing-plan-purchase-btn {
+	color: #000;
+	font-size: 16px;
+	font-weight: bold;
+	width: 145px;
+	height: 45px;
+	border-radius: 22.5px;
+	-webkit-transition: all 0.4s;
+	transition: all 0.4s;
+	position: relative;
+	display: -webkit-box;
+	display: flex;
+	-webkit-box-align: center;
+	align-items: center;
+	margin-left: auto;
+	margin-right: auto;
+	-webkit-box-pack: center;
+	justify-content: center;
+}
+.pricing-plan-basic .pricing-plan-purchase-btn {
+	background-color: #fe397a;
+	color: #fff;
+}
+.pricing-plan-pro .pricing-plan-purchase-btn {
+	background-color: #10bb87;
+	color: #fff;
+}
+.pricing-plan-enterprise .pricing-plan-purchase-btn {
+	background-color: #5d78ff;
+	color: #fff;
+}
+.pricing-plan-basic .pricing-plan-icon {
+	color: #fe397a;
+}
+.pricing-plan-pro .pricing-plan-icon {
+	color: #10bb87;
+}
+.pricing-plan-enterprise .pricing-plan-icon {
+	color: #5d78ff;
+}
+.pageTop h1 {
+	font-size: 24px;
+}
+.pageTop {
+	text-align: center;
+	margin: 0 0 55px;
+	display: block;
+}
+.pricing-plan-title img {
+	width: 24px;
+	margin-right: 10px;
+}
+.pricePerJob {
+	color: #191b1f;
+	background: #fff2dd;
+	border-radius: 6.9px;
+	justify-content: center;
+	align-items: center;
+	gap: 3.45px;
+	width: fit-content;	
+	padding: 10px;
+	font-size: 15px;
+	line-height: 23px;
+	display: flex;
+}
+.priceandOffer{
+	margin: 10px auto 50px;
+}
+.tobeUsed {
+	margin: 25px 0 0;
+	display: inline-block;
+}
+.priceandOffer {
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 10px;
+	min-height: 100px;
+	margin: 10px 50px;
+	display: flex;
+}
+.realPrice{
+	color: #191b1f;
+	font-size: 17px;
+	font-weight: 400;
+	line-height: 18px;
+	text-decoration-line: line-through;
+	margin-left: 10px;
+}
+.pricing-plan-features {
+	color: #000;
+	font-size: 38px;
+	font-weight: bold;
+	list-style: none;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+.discountPrice {
+	font-size: 14px;
+	font-weight: bold;
+}
+.discountPrice svg {
+	color: #3bb54e;
+	margin-right: 5px;
+}
+.reCommend {
+	background: #ff6565;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 14px;
+	font-weight: 600;
+	position: absolute;
+	padding: 4px 18px;
+	border-radius: 20px;
+	top: -15px;
+	left: 0;
+	right: 0;
+	width: 215px;
+	margin: auto;
+}
+.getSupportCall {
+	background: #FAEDFF;
+	border: 1px solid #E7D0F0;
+	border-radius: 20px;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	height: 96px;
+	margin: 44px auto 0;
+	padding: 20px 30px;
+	display: flex;
+}
+.getSupportCallLeft img {
+	width: 50px;
+	margin-right: 38px;
+}
+.getSupportCall_title__cvdmp {
+	color: #191b1f;
+	font-size: 21px;
+	font-weight: 700;
+	line-height: 32px;
+	display: flex;
+	flex-direction: column;
+}
+.contactSales_subTitle__0P9I5 {
+	color: #191b1f;
+	font-size: 16px;
+	font-weight: 400;
+}
+.getSupportCallLeft {
+	display: flex;
+	align-items: center;
+}
+.getSupportCallLeft img {
+	width: 40px;
+	margin-right: 38px;
+	height: 40px !important;
+}
+.getSupportCallRight a.btn {
+	border: 1px solid #7705cf;
+	background: #fff;
+	color: #7705cf;
+	border-radius: 25px;
+	min-width: 148px;
+}
+.smallNote {
+	font-size: 13px;
+	text-align: center;
+	color: #7c8ba2;
+	font-weight: 400;
+}
+.getSupportCallRight a.btn:hover {
+	color: #7705cf;
+	background: #f7f7f7;
+}
+.redastric{
+	color: red;
+	margin-left: 3px;
+}
+.social-login {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+}
+.socialIcon {
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	flex-direction: row;
+}
+.socialIcon.google {
+	background: red;
+}
+.socialIcon.linkdin {
+  background: #0A66C2;
+}
+.social-login span {
+  text-align: center;
+  color: #fff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.recruiterLogin .btn.btn-primary{
+  background-color: #4865ff;
+  border-color: #4865ff;
+}
+.signINbtn .btn {
+	width: 100%;
+	margin: 20px 0 0;
+}
+.or-container {
+	align-items: center;
+	color: #ccc;
+	display: flex;
+	margin: 25px 0;
+}
+.line-separator {
+	background-color: #ccc;
+	flex-grow: 5;
+	height: 1px;
+}
+.or-label {
+	flex-grow: 1;
+	margin: 0 15px;
+	text-align: center;
+}
+.topTextLogin {
+	margin: 10px 0 20px;
+	font-size: 14px;
+	font-weight: 400;
+}
+
+.reSendOTP {
+  cursor: pointer;
+  color: #0d6efd;
+  font-weight: 500;
+}
+
+.reSendOTP.disabled {
+  pointer-events: none;
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.otpInputFields input {
+  height: 48px;
+  width: 48px;
+  font-size: 16px;
+}
+.otpInputFields {
+	flex-direction: row;
+	justify-content: space-between !important;
+	gap: 10px !important;
+	display: flex !important;
+}
+.resednText {
+	text-align: right;
+	margin: 0 0 15px;
+	
+}
+.sendOtpActive{
+	text-decoration: underline;
+	color: #4865ff;
+	font-weight: normal;
+	cursor: pointer;
+}
+.recruiterLogin .loginBox {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.recruiterLogin .superAdmin{
+	min-height: 460px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.text-muted.resendtext strong {
+	width: 28px;
+	display: inline-block;
+}
+.logoDiv {
+	margin: 0 0 25px;
+}
+.modal-dialog.modal-dialog-centered.otpmodal {
+	max-width: 410px;
+}
+.otpmodal .modal-header {
+	border-bottom: none;
+	padding-bottom: 0;
+}
+.numbervalidatoin {
+	font-size: 14px;
+	margin: 0;
+}
+.userNumber {
+	font-size: 14px;
+	font-weight: 600;
+	margin: 0 0 30px;
+}
+.pencil-icon {
+	color: #4865ff;
+	margin-left: 5px;
+	font-size: 12px;
+	position: relative;
+	top: -3px;
+	cursor: pointer;
+}
+/*Swal Control*/
+.swal2-title {
+	font-size: 18px;
+}
+.swal2-html-container {
+	font-size: 16px;
+}
+.swal2-confirm.swal2-styled {
+	background-color: #4865ff;
+	border-color: #4865ff;
+}
+/*End Swal Control*/
+
+.statusBadge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 4px 10px;
+  font-size: 12px;
+  border-radius: 20px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.statusBadge.active {
+  background: #28a745;
+}
+
+.statusBadge.expired {
+  background: #dc3545;
+}
+
+.pricing-expired {
+  opacity: 0.7;
+}

@@ -1,0 +1,266 @@
+.btn.btn-primary {
+	background-color: #4865FF;
+	border-color: #4865FF;
+}
+.btn.btn-primary:hover {
+	background-color: #3755eb;
+	border-color: #3755eb;
+}
+.welcomeheading {
+	justify-content: space-between;
+	align-items: center;
+	display: flex;
+	margin: 0 0 15px;
+}
+.welcomeheading h1 {
+	font-size: 24px;
+}
+.pramotion-banner .carousel-item img {
+	border-radius: 10px;
+}
+.verification-steps {
+	margin: 10px 0 30px;
+}
+.cardHeading {
+	margin: 0 0 15px;
+	font-size: 20px;
+	font-weight: 500;
+	padding: 15px 15px 0;
+}
+.cardHeading img {
+	margin-right: 10px;
+	height: 30px;
+	width: 30px;
+}
+.verification-steps .progress {
+	border-radius: 0;
+	height: 5px;
+	margin: 0 0 20px;
+}
+.card-content {
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 15px;
+	display: flex;
+	margin: 0 0 5px;
+}
+.checkboxText .form-check-input:checked {
+	background-color: #059669 !important;
+	border-color: #059669 !important;
+}
+.checkboxText input {
+	border-radius: 50% !important;
+	height: 20px;
+	width: 20px;
+	margin-right: 25px;
+	margin-top: 0;
+}
+.checkboxText span {
+	font-weight: 500;
+}
+.statusbtn.completed {
+  background: #ECFDF5;
+  color: #05967B;
+}
+.statusbtn {
+  background: #F1F5F9;
+  color: #6474A7;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.statusbtn.under-review {
+	background: #FFDFCC;
+	color: #B1704A;
+}
+.lastbtn {
+	min-width: 120px;
+	text-align: right;
+}
+.checkboxText {
+	min-width: 220px;
+}
+.card {
+	border-color: #e2e8f0 !important;
+	border-radius: 6px;
+}
+.lastbtn a {
+	border: 1px solid #e2e8f0;
+	color: #000;
+	text-decoration: none;
+	padding: 8px 16px;
+	border-radius: 4px;
+	text-align: center;
+}
+.checkboxText .form-check-input[type="checkbox"] {
+	border-color: #94A3B8;
+}
+.infoicon {
+	font-size: 18px;
+}
+.pramotion-banner {
+	margin: 0 0 30px;
+}
+.kpiBoxArea {
+	border: 1px solid #e2e8f0;
+	border-radius: 10px;
+	justify-content: flex-start;
+	align-items: center;
+	margin: 0 0 20px;
+	padding: 15px;
+	display: flex;
+}
+.iconKpi {
+	background: #f4f6f8;
+	justify-content: center;
+	align-items: center;
+	width: 45px;
+	height: 45px;
+	font-size: 20px;
+	display: flex;
+	margin-right: 25px;
+}
+.kpiText {
+	color: #65768e;
+}
+.kpiNumnber {
+	color: #000;
+	font-size: 24px;
+	font-weight: 600;
+}
+.contentKpi {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+.iconKpi img {
+	width: 22px;
+}
+.gradientbg {
+	background: #faebff;
+	background: -webkit-linear-gradient(to bottom, #faebff, #fff);
+	background: linear-gradient(#faebff, #fff);
+	padding: 15px;
+	border-radius: 10px;
+}
+.gradientBox.contactus {
+	border: 1px solid #e2e8f0;
+	padding: 10px;
+    border-radius: 10px;
+}
+.gradientbg h3 {
+	font-size: 20px;
+}
+.buttonImage img {
+	width: 70px;
+	opacity: 0.5;
+}
+.buttonImage {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.buttonImage a.btn {
+	border: 1px solid #aebdd0;
+	color: #000;
+}
+.buttonImage a.btn:hover {
+	background-color: #fff;
+	color: #000;
+}
+.d-md-flex.roundbtn {
+	flex-wrap: wrap;
+}
+.mutipleSelctBox {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 20px;
+}
+
+.cursor-pointer{
+	cursor: pointer !important;
+}
+.chip {
+  padding: 8px 18px;
+  border-radius: 25px;
+  border: 1px solid #d0d5dd;
+  background: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.chip.active {
+  background: #4c6ef5;
+  color: #fff;
+  border-color: #4c6ef5;
+}
+
+.redastric {
+  color: red;
+}
+.customTimePick{
+	width: 40%;
+}
+.checkTime .MuiPickersInputBase-root {
+	height: 38px;
+}
+.form-control, .form-select {
+	box-shadow: none;
+	border-color: hsl(0, 0%, 80%);
+	border-radius: 5px;
+	height: auto;
+}
+.progressPercent {
+	font-size: 14px;
+	color: #393939;
+	font-weight: normal;
+}
+.redastric{
+	color: red;
+	margin-left: 3px;
+}
+
+.card-title {
+	font-size: 18px;
+}
+.card-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 15px;
+	background: #fff;
+	border-color: #eceff5;
+}
+.recruuiterJobList .card {
+	border-radius: 6px;
+}
+.card-topr {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 15px 15px 0;
+}
+.seerchrighttop {
+	display: flex;
+	align-items: flex-end;
+	justify-content: end;
+	gap: 15px;
+}
+.seerchrighttop input {
+	min-width: 250px;
+}
+
+.card-body.customTable tr th {
+	color: #303e67;
+    font-weight: 500;
+    vertical-align: middle;
+    border-color: #e8ebf3;
+	font-size: 14px;
+	background: none;
+}
+table .form-select.form-select-sm {
+	max-width: 160px;
+}
