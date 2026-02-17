@@ -1,0 +1,71 @@
+.chat-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+/* Common row */
+.chat-row {
+  display: flex;
+  width: 100%;
+}
+
+/* USER (Sender) → RIGHT */
+.chat-row.user {
+  justify-content: flex-end;
+}
+
+.chat-row.user .chat-bubble {
+  background-color: #0dcaf0; /* bootstrap info */
+  color: #fff;
+  text-align: right;
+  border-radius: 15px 15px 0 15px;
+}
+
+/* BOT → LEFT */
+.chat-row.bot {
+  justify-content: flex-start;
+}
+
+.chat-row.bot .chat-bubble {
+  background-color: #f1f1f1;
+  color: #000;
+  text-align: left;
+  border-radius: 15px 15px 15px 0;
+}
+
+/* Bubble common */
+.chat-bubble {
+  max-width: 70%;
+  padding: 10px 14px;
+  font-size: 14px;
+  word-wrap: break-word;
+  line-height: 1.4;
+}
+/* BOT markdown code block */
+.chat-row.bot pre {
+  background-color: #000;        /* pure black */
+  color: #fff;                   /* pure white text */
+  padding: 12px;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* Inline code ( `code` ) */
+.chat-row.bot code {
+  background-color: #000;
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+/* Remove extra markdown margin */
+.chat-row.bot pre > code {
+  background: transparent;
+  padding: 0;
+}

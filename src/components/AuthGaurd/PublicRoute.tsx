@@ -5,16 +5,14 @@ import { useSession } from "../../hooks/useSession";
 const ProtectedRoute = ({ children }: any) => {
   const session = useSession();
   const navigate = useNavigate();
-  const location = useLocation();
+  const location = useLocation(); 
 
   useEffect(() => {
     if (session.isLoggedIn) {
-      navigate("/dashboard", { replace: true, state: { from: location.pathname }, });
+      navigate("/chat", { replace: true, state: { from: location.pathname }, });
     }
   }, [session.isLoggedIn, navigate, location.pathname]);
-
-  if (!session.isLoggedIn) return null;
-
+ 
   return children;
 };
 
