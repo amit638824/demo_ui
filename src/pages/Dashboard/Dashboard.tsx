@@ -1,97 +1,147 @@
+import { useState, useRef, useEffect } from "react";
 import { FaSearch } from "react-icons/fa";
-const Dashboard: any = () => {
-  
-  return (
-    <div>
-<div className="layout-wrapper layout-content-navbar">
-  <div className="layout-container">
-    <aside id="layout-menu" className="layout-menu menu-vertical menu bg-menu-theme" data-bg-className="bg-menu-theme">
-          <div className="app-brand demo">
-            <a href="#" className="app-brand-link">              
-              <img height={50} src="assets/images/logo.png" />
-            </a>            
-          </div>        
+import ChatCard from "./ChatCard";
+import { clearUserDetails } from "../../redux/slice/userDetailSlice";
+import { logout } from "../../redux/slice/authSlice";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
-          <ul className="menu-inner py-1 ps ps--active-y">
-           
+const Dashboard: any = () => {
+  const [open, setOpen] = useState(false);
+  const dropdownRef = useRef<HTMLLIElement>(null);
+  const dispatch=useDispatch()
+  const navigate = useNavigate()
+  // Close dropdown on outside click
+  useEffect(() => {
+    const handleOutsideClick = (e: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(e.target as Node)
+      ) {
+        setOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleOutsideClick);
+    return () => document.removeEventListener("mousedown", handleOutsideClick);
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    dispatch(logout());
+    dispatch(clearUserDetails());
+    navigate('/')
+  };
+  return (
+    <div className="layout-wrapper layout-content-navbar">
+      <div className="layout-container">
+        {/* Sidebar */}
+        <aside
+          id="layout-menu"
+          className="layout-menu menu-vertical menu bg-menu-theme"
+        >
+          <div className="app-brand demo">
+            <a href="#" className="app-brand-link">
+              <img height={50} src="assets/images/logo.png" />
+            </a>
+          </div>
+
+          <ul className="menu-inner py-1">
             <li className="menu-item active">
-              <a href="index.html" className="menu-link">
-                <span className="serchicons"><FaSearch  /></span>
-                <div data-i18n="Analytics">Dashboard</div>
+              <a href="#" className="menu-link">
+                <span className="me-2">
+                  <FaSearch />
+                </span>
+                <div>Dashboard</div>
               </a>
-            </li>           
+            </li>
           </ul>
         </aside>
-      <div className="layout-page">
-        <nav className="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme" id="layout-navbar">
-            
 
-            <div className="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
-             
+        {/* Main Page */}
+        <div className="layout-page">
+          {/* Navbar */}
+          <nav className="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached bg-navbar-theme">
+            <div className="navbar-nav-right d-flex align-items-center w-100">
+              {/* Search */}
               <div className="navbar-nav align-items-center">
                 <div className="nav-item d-flex align-items-center">
-                  <FaSearch  />
-                  <input type="text" className="form-control border-0 shadow-none" placeholder="Search..." aria-label="Search..." />
+                  <FaSearch />
+                  <input
+                    type="text"
+                    className="form-control border-0 shadow-none ms-2"
+                    placeholder="Search..."
+                  />
                 </div>
               </div>
-             
 
+              {/* Profile */}
               <ul className="navbar-nav flex-row align-items-center ms-auto">
-               
-               
-                <li className="nav-item navbar-dropdown dropdown-user dropdown">
-                  <a className="nav-link dropdown-toggle hide-arrow" href="#" data-bs-toggle="dropdown">
+                <li
+                  className="nav-item navbar-dropdown dropdown-user"
+                  ref={dropdownRef}
+                >
+                  <a
+                    href="#"
+                    className="nav-link hide-arrow"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setOpen(!open);
+                    }}
+                  >
                     <div className="avatar avatar-online">
-                      <img src="assets/images/1.png" alt="" className="w-px-40 h-auto rounded-circle" />
+                      <img
+                        src="assets/images/1.png"
+                        alt="user"
+                        className="w-px-40 h-auto rounded-circle"
+                      />
                     </div>
                   </a>
-                  <ul className="dropdown-menu dropdown-menu-end">
+
+                  {/* Dropdown */}
+                  <ul
+                    className={`dropdown-menu dropdown-menu-end ${open ? "show" : ""
+                      }`}
+                  >
                     <li>
                       <a className="dropdown-item" href="#">
                         <div className="d-flex">
                           <div className="flex-shrink-0 me-3">
-                            <div className="avatar avatar-online">
-                              <img src="assets/images/1.png" alt="" className="w-px-40 h-auto rounded-circle" />
-                            </div>
+
                           </div>
                           <div className="flex-grow-1">
-                            <span className="fw-semibold d-block">John Doe</span>
+                            <span className="fw-semibold d-block">
+                              John Doe
+                            </span>
                             <small className="text-muted">Admin</small>
                           </div>
                         </div>
                       </a>
                     </li>
+
                     <li>
                       <div className="dropdown-divider"></div>
                     </li>
+
                     <li>
                       <a className="dropdown-item" href="#">
-                        <i className="bx bx-user me-2"></i>
-                        <span className="align-middle">My Profile</span>
+                        My Profile
                       </a>
                     </li>
+
                     <li>
                       <a className="dropdown-item" href="#">
-                        <i className="bx bx-cog me-2"></i>
-                        <span className="align-middle">Settings</span>
+                        Settings
                       </a>
                     </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        <span className="d-flex align-items-center align-middle">
-                          <i className="flex-shrink-0 bx bx-credit-card me-2"></i>
-                          <span className="flex-grow-1 align-middle">Billing</span>
-                          <span className="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">4</span>
-                        </span>
-                      </a>
-                    </li>
+
                     <li>
                       <div className="dropdown-divider"></div>
                     </li>
-                    <li>
-                      <a className="dropdown-item" href="auth-login-basic.html">
-                        <i className="bx bx-power-off me-2"></i>
-                        <span className="align-middle">Log Out</span>
+
+                    <li onClick={handleLogout}>
+                      <a className="dropdown-item" href="#">
+                        Log Out
                       </a>
                     </li>
                   </ul>
@@ -100,108 +150,22 @@ const Dashboard: any = () => {
             </div>
           </nav>
 
-        <div className="content-wrapper">
-          <section className="container-xxl flex-grow-1 container-p-y">
-        <div className="py-5">
-
-          <div className="row">
-
-
-            <div className="col-md-12 col-lg-12 col-xl-12">
-              <div className="card">
-                <h5 className="card-header">Chat with Chatbot</h5>
-                <div className="card-body">
-                    <ul className="list-unstyled">
-                <li className="d-flex  mb-4">
-                  <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-6.webp" alt="avatar"
-                    className="rounded-circle d-flex align-self-start me-3 shadow-1-strong" width="60" />
-                  <div className="card">
-                    <div className="card-header d-flex justify-content-between p-3">
-                      <p className="fw-bold mb-0">Brad Pitt</p>
-                      <p className="text-muted small mb-0"><i className="far fa-clock"></i> 12 mins ago</p>
-                    </div>
-                    <div className="card-body">
-                      <p className="mb-0">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua.
-                      </p>
-                    </div>
-                  </div>
-                </li>
-                <li className="d-flex  mb-4">
-                  <div className="card w-100">
-                    <div className="card-header d-flex justify-content-between p-3">
-                      <p className="fw-bold mb-0">Lara Croft</p>
-                      <p className="text-muted small mb-0"><i className="far fa-clock"></i> 13 mins ago</p>
-                    </div>
-                    <div className="card-body">
-                      <p className="mb-0">
-                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                        laudantium.
-                      </p>
-                    </div>
-                  </div>
-                  <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-5.webp" alt="avatar"
-                    className="rounded-circle d-flex align-self-start ms-3 shadow-1-strong" width="60" />
-                </li>
-                <li className="d-flex  mb-4">
-                  <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-6.webp" alt="avatar"
-                    className="rounded-circle d-flex align-self-start me-3 shadow-1-strong" width="60" />
-                  <div className="card">
-                    <div className="card-header d-flex justify-content-between p-3">
-                      <p className="fw-bold mb-0">Brad Pitt</p>
-                      <p className="text-muted small mb-0"><i className="far fa-clock"></i> 10 mins ago</p>
-                    </div>
-                    <div className="card-body">
-                      <p className="mb-0">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua.
-                      </p>
-                    </div>
-                  </div>
-                </li>
-                <li className="bg-white mb-3">
-                  <div data-mdb-input-init className="form-outline">
-                    <textarea
-                      className="form-control bg-body-tertiary"
-                      id="textAreaExample2"
-                      rows={4}
-                    />
-
-                    <label
-                      className="form-label"
-                      htmlFor="textAreaExample2"
-                    >
-                      Message
-                    </label>
-
-                  </div>
-                </li>
-                <button type="button" data-mdb-button-init data-mdb-ripple-init className="btn btn-info btn-rounded float-end">Send</button>
-              </ul>
+          {/* Content */}
+          <div className="content-wrapper">
+            <section className="container-xxl flex-grow-1 container-p-y">
+              <div className="row">
+                <div className="col-12">
+                  <ChatCard />
                 </div>
               </div>
-
-              
-
-            </div>
-
+            </section>
           </div>
-
         </div>
-      </section>
-        </div>
-
-
-
       </div>
-    
-  </div>
-</div>
-    
-      
     </div>
-  )
-}
+  );
+};
 
-export default Dashboard
+export default Dashboard;
+ 
+

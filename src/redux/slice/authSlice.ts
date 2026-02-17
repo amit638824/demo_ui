@@ -26,6 +26,7 @@ const authSlice = createSlice({
       state.user = {};
       state.token = null;
       state.permissions = [];
+      state.isLoggedIn=false
     },
   },
 });
